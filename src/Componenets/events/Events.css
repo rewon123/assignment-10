@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.color-card {
+    border: none;
+    border-radius: 10px;
+    /* background: #FF7044; */
+    color: white;
+    margin: 5px;
+}
+.work-container:nth-child(2n+2) .work-title{
+    background-color:#FF7044;
+    }
+    .work-container:nth-child(3n+3) .work-title{
+        background-color:#3F90FC;
+    }
+    .work-container:nth-child(4n+4) .work-title{
+        background-color:#421FCF;
+    }
+    .work-title{
+        background-color:#FFBD3E;
+       
+    }
