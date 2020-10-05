@@ -5,7 +5,7 @@ import './Events.css'
 const EventCards = () => {
     const [events, setEvents] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8080/eventsForRegister')
+        fetch('https://vounteer.herokuapp.com/eventsForRegister')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])

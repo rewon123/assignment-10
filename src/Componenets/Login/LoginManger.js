@@ -11,7 +11,7 @@ export const initializeLoginFramework = () => {
 export const userLogin = (cv) => {
     return firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            console.log(user);
+            // console.log(user);
             cv(user)
             return user;
         } else {

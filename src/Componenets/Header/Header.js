@@ -5,7 +5,7 @@ import logo from '../../volunteer-network/logos/Group 1329.png'
 import { UserContext } from '../../App';
 
 const Header = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     return (
         <nav className="navbar navbar-expand navbar-light bg-transparent py-2 ">
             <div className="container">

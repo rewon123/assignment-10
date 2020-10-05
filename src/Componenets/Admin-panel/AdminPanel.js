@@ -9,22 +9,22 @@ import trash from '../../volunteer-network/logos/trash-2 9.png'
 const AdminPanel = () => {
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:8080/allUsers`)
+        fetch(`https://vounteer.herokuapp.com/allUsers`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setAllUsers(data)
             })
 
     }, [])
 
     const deleteUser = (_id) => {
-        fetch(`http://localhost:8080/deleteUser/${_id}`, {
+        fetch(`https://vounteer.herokuapp.com/deleteUser/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
             })
         alert('you deleted a user successfully reload the page to see the result')
     }

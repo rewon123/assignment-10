@@ -8,21 +8,21 @@ const Dashboard = () => {
 
 
     const deleteRegistration = id => {
-        fetch(`http://localhost:8080/deleteRegistration/${id}`, {
+        fetch(`https://vounteer.herokuapp.com/deleteRegistration/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
             .then(result => {
-                console.log('innanillah');
+                // console.log('innanillah valo thakis');
             })
         alert('your registration has been cancelled succesfully reload the page to see the result')
 
     }
     useEffect(() => {
-        fetch(`http://localhost:8080/specificRegistration?email=${loggedInUser.email}`)
+        fetch(`https://vounteer.herokuapp.com/specificRegistration?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setDashboardData(data)
             })
     }, [])

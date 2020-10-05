@@ -14,7 +14,7 @@ const Register = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8080/register/${id}`)
+        fetch(`https://vounteer.herokuapp.com/register/${id}`)
             .then(res => res.json())
             .then(data => {
                 setEvents(data)
@@ -25,7 +25,7 @@ const Register = () => {
         // console.log('form submitted', data)
         const allData = { ...loggedInUser, data, forDashboard: events }
 
-        fetch('http://localhost:8080/AddRegistrations', {
+        fetch('https://vounteer.herokuapp.com/AddRegistrations', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(allData)

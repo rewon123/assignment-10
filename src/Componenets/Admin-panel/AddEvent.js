@@ -1,17 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import logo from '../../volunteer-network/logos/Group 1329.png';
 import user from '../../volunteer-network/logos/users-alt 1.png';
 import plus from '../../volunteer-network/logos/plus 1.png';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { UserContext } from '../../App';
 
 
 const AddEvent = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const event = { ...data };
-        fetch('http://localhost:8080/AddEvent', {
+        fetch('https://vounteer.herokuapp.com/AddEvent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(event)
@@ -21,9 +20,6 @@ const AddEvent = () => {
             alert('Event added successfully')
         }
     }
-
-
-
 
     return (
         <div className="m-5">
@@ -52,7 +48,7 @@ const AddEvent = () => {
                     <label >Event Name</label>
                     <input className="input-field " name="name" required ref={register} /> <br />
                     <label>Description</label>
-                    <input className="input-field " name="Description" ref={register({ pattern: /^[A-Za-z]+$/i })} /> <br />
+                    <input className="input-field " name="Description" ref={register} /> <br />
                     <label>Event Date</label>
                     <input className="input-field " name="eventDate" type="date" ref={register} /> <br />
                     <label>Upload an image</label> <br />
